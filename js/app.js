@@ -10,8 +10,20 @@
 var capitalize = function(str) {
   //Escribe tu codigo aqui
   // No puedes utilizar directamente sobre str toUpperCase
+  
+  var splited = (str.split(''))
+  var capitals = []
+  splited.forEach(function(element){
+    capitals.push(element.toUpperCase())
+  })
+  capitals = capitals.join('')
+  console.log(capitals)
 
 }
+
+
+
+
 
 //Utiliza console.log() para visualizar el funcionamiento de tu código.
 var outputCapitalize = capitalize("whoop")
@@ -29,8 +41,8 @@ var swapCase = function(str) {
   
 }
 
-var outputSwapCase = swapCase("hey gurl, lets javascript together sometime")
-console.log(outputSwapCase); //---> "HEY gurl, LETS javascript TOGETHER sometime"
+//var outputSwapCase = swapCase("hey gurl, lets javascript together sometime")
+//console.log(outputSwapCase); //---> "HEY gurl, LETS javascript TOGETHER sometime"
 
 
 // 3. shiftLetter
@@ -57,8 +69,11 @@ console.log(outputShiftLetters); // ---> 'ifmmp'
 var numberArray = [1,2,3,4,5,6,7,8,9,10];
 
 var evenNumbers = function(array) {
-  //Escribe tu codigo aquí.
+  return array.filter(function(number){
+    return number % 2 == 0;
+  })
 };
+
 
 var outputEvenNumbers = evenNumbers(numberArray);
 console.log(outputEvenNumbers); // ---> [2, 4, 6, 8, 10]
@@ -69,10 +84,12 @@ console.log(outputEvenNumbers); // ---> [2, 4, 6, 8, 10]
 // ejem. oddNumbers([1,2,3,4,5,6,7,8,9,10]) ---> [1, 3, 5, 7, 9]
 
 var oddNumbers = function(array) {
-  //Escribe tu codigo aquí
+  return array.filter(function(number){
+    return number % 2 != 0;
+  })
 };
 
-var outputOdd = oddNumbers(numberArray);
+var outputOddNumbers = oddNumbers(numberArray);
 console.log(outputOddNumbers); // ---> [1, 3, 5, 7, 9]
 
 
@@ -109,12 +126,38 @@ var persons = [
   {id : 5, name : "Alex", tags : "java"}
 ];
 
+var javascripts = [];
+function jsFilter(){
+  persons.forEach(function(element){
+    if(element['tags'] == 'javascript'){
+      javascripts.push(element['tags'])
+    }
+  })
+  console.log(javascripts)
+
+}
+jsFilter()
+
+
 // 8. Render in DOM
 /*Usando la data anterior y alguno de los métodos, pinta en el index.html a través del DOM
  cada una de las personas y todas sus propiedades */
 
 var paintPersons = function() {
+  var container = document.getElementById('container')
+  persons.forEach(function(element){
+    var id = document.createElement('p')
+    id.innerText = element['id']
+    container.appendChild(id)
+    var name = document.createElement('p')
+    name.innerText = element['name']
+    container.appendChild(name)
+    var tags = document.createElement('p')
+    tags.innerText = element['tags']
+    container.appendChild(tags)
 
+
+  })
 }
 
 var outputPaintPerson = paintPersons(persons);
@@ -128,7 +171,10 @@ var outputPaintPerson = paintPersons(persons);
   3. Suma el resultado.
   
   ejem. output --> 84 
+
 */
+
+
 
 var data = [
   {
@@ -153,12 +199,37 @@ var data = [
   },
 ];
 
+
+function getAge(){
+  var counter = 0;
+  data.forEach(function(element){
+    if(element['type'] === 'dog'){
+      var dogAge = element['age'] * 7
+      counter = counter + dogAge
+    }
+  })
+console.log(counter)
+}
+getAge()
+
 // 10. Render in DOM 
 /*Usando la data anterior y alguno de los métodos, pinta en el index.html a través del DOM
  cada una de las mascotas junto con todas su propiedades*/
 
  var paintPets = function(array) {
-
+  var container = document.getElementById('container')
+  data.forEach(function(element) {
+    var name = document.createElement('p')
+    name.innerText = element['name']
+    container.appendChild(name)
+    var age = document.createElement('p')
+    age.innerText = element['age']
+    container.appendChild(age)
+    var type = document.createElement('p')
+    type.innerText = element['type']
+    container.appendChild(type)
+    
+});
  };
 
 var outputPaintPets = paintPets(data);
@@ -169,5 +240,4 @@ var outputPaintPets = paintPets(data);
 
 var fruits = ['Banana', 'Orange', 'Apple', 'Kiwi'];
 
-
-
+var sortedFruits = fruits.sort()
