@@ -42,9 +42,6 @@ function shiftLetters(str) {
 
 shiftLetters('hello')
 
-//var outputShiftLetters = shiftLetters('hello');
-//console.log(outputShiftLetters); // ---> 'ifmmp'
-
 
 // Ejercicio 4
 var numberArray = [1,2,3,4,5,6,7,8,9,10];
@@ -77,7 +74,7 @@ var reducer = function() {
 
 }
 
-// var outputReducer = reducer([1,2,3,4,5,6,7,8,9]);
+// var outputReducer = reducer([1,2,3,4,5,6,7,8,9]);s
 // console.log(outputReducer); // ---> [ 20, 25 ]
 
 
@@ -101,7 +98,22 @@ function jsFilter(){
   console.log(javascripts);
 
 }
+
+function jsOtherFilter(array){
+  var jsArray = [];
+  array.forEach(function(element){
+    jsArray.push(element['tags']);
+    jsOtherArray =  jsArray.filter(function(tag){
+      return (tag == 'javascript');
+    });
+  })
+  console.log(jsOtherArray)
+  }
+
+
+
 jsFilter();
+jsOtherFilter(persons)
 
 
 // Ejercicio 8
