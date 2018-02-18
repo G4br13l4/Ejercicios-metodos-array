@@ -46,7 +46,7 @@ shiftLetters('hello')
 // Ejercicio 4
 var numberArray = [1,2,3,4,5,6,7,8,9,10];
 
-var evenNumbers = function(array) {
+function evenNumbers(array) {
   return array.filter(function(number){
     return number % 2 == 0;
   })
@@ -57,7 +57,7 @@ console.log(outputEvenNumbers); // ---> [2, 4, 6, 8, 10];
 
 
 // Ejercicio 5
-var oddNumbers = function(array) {
+function oddNumbers(array) {
   return array.filter(function(number){
     return number % 2 != 0;
   });
@@ -69,13 +69,23 @@ console.log(outputOddNumbers); // ---> [1, 3, 5, 7, 9];
 
 
 // Ejercicio 6
-var reducer = function() {
-  
-
+function reducer() {
+  var odd = oddNumbers(numberArray)
+  var even = evenNumbers(numberArray)
+  var sumArray = []
+  var sumOdd =  odd.reduce(function(a,b){
+    return a + b;
+  })
+sumArray.push(sumOdd)
+var sumEven =  even.reduce(function(a,b){
+  return a + b;
+})
+sumArray.push(sumEven)
+return sumArray
 }
 
-// var outputReducer = reducer([1,2,3,4,5,6,7,8,9]);s
-// console.log(outputReducer); // ---> [ 20, 25 ]
+console.log(reducer())
+
 
 
 // Ejercicio 7
@@ -109,8 +119,6 @@ function jsOtherFilter(array){
   })
   console.log(jsOtherArray)
   }
-
-
 
 jsFilter();
 jsOtherFilter(persons)
