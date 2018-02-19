@@ -23,11 +23,11 @@ capitalizeMap('whoop');
 
 // Ejercicio 2
 function swapCase(str) {
-  console.log(str.split(' ').map(function(s, i){
-    if(i % 2 == 0){
-      return s.toUpperCase();
+  console.log(str.split(' ').map(function(letter, index){
+    if(index % 2 == 0){
+      return letter.toUpperCase();
   } else {
-      return s;
+      return letter;
   }
 }
 ).join(' '));
