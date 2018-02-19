@@ -30,20 +30,20 @@ function swapCase(str) {
       return s;
   }
 }
-).join(' '))
+).join(' '));
 }
 
-swapCase("hey gurl, lets javascript together sometime")
+swapCase("hey gurl, lets javascript together sometime");
 
 // Ejercicio 3
 function shiftLetters(str) {
   str = str.split('');
   str = str.map(function(x) {
     return String.fromCharCode(x.charCodeAt() + 1);
-  }).join('')
+  }).join('');
   console.log(str);
 }
-shiftLetters('hello')
+shiftLetters('hello');
 
 // Ejercicio 4
 var numberArray = [1,2,3,4,5,6,7,8,9,10];
@@ -68,20 +68,20 @@ console.log(outputOddNumbers); // ---> [1, 3, 5, 7, 9];
 
 // Ejercicio 6
 function reducer() {
-  var odd = oddNumbers(numberArray)
-  var even = evenNumbers(numberArray)
-  var sumArray = []
+  var odd = oddNumbers(numberArray);
+  var even = evenNumbers(numberArray);
+  var sumArray = [];
   var sumOdd =  odd.reduce(function(a,b){
     return a + b;
   })
-sumArray.push(sumOdd)
+sumArray.push(sumOdd);
 var sumEven =  even.reduce(function(a,b){
   return a + b;
 })
-sumArray.push(sumEven)
+sumArray.push(sumEven);
 return sumArray
 }
-console.log(reducer())
+console.log(reducer());
 
 // Ejercicio 7
 var persons = [
@@ -98,7 +98,7 @@ function jsFilter(){
     if(element['tags'] == 'javascript'){
       javascripts.push(element['tags']);
     }
-  })
+  });
   console.log(javascripts);
 }
 
@@ -110,10 +110,10 @@ function jsOtherFilter(array){
       return (tag == 'javascript');
     });
   })
-  console.log(jsOtherArray)
+  console.log(jsOtherArray);
   }
 jsFilter();
-jsOtherFilter(persons)
+jsOtherFilter(persons);
 
 // Ejercicio 8
 var paintPersons = function() {
@@ -122,7 +122,7 @@ var paintPersons = function() {
     personId(element);
     personName(element);
     personTag(element);
-  })
+  });
 }
 
 function personId(element) {
