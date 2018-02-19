@@ -23,13 +23,17 @@ capitalizeMap('whoop');
 
 // Ejercicio 2
 function swapCase(str) {
-  
+  console.log(str.split(' ').map(function(s, i){
+    if(i % 2 == 0){
+      return s.toUpperCase();
+  } else {
+      return s;
+  }
+}
+).join(' '))
 }
 
-//var outputSwapCase = swapCase("hey gurl, lets javascript together sometime")
-//console.log(outputSwapCase); //---> "HEY gurl, LETS javascript TOGETHER sometime"
-
-
+swapCase("hey gurl, lets javascript together sometime")
 
 // Ejercicio 3
 function shiftLetters(str) {
@@ -39,13 +43,10 @@ function shiftLetters(str) {
   }).join('')
   console.log(str);
 }
-
 shiftLetters('hello')
-
 
 // Ejercicio 4
 var numberArray = [1,2,3,4,5,6,7,8,9,10];
-
 function evenNumbers(array) {
   return array.filter(function(number){
     return number % 2 == 0;
@@ -54,7 +55,6 @@ function evenNumbers(array) {
 
 var outputEvenNumbers = evenNumbers(numberArray);
 console.log(outputEvenNumbers); // ---> [2, 4, 6, 8, 10];
-
 
 // Ejercicio 5
 function oddNumbers(array) {
@@ -65,8 +65,6 @@ function oddNumbers(array) {
 
 var outputOddNumbers = oddNumbers(numberArray);
 console.log(outputOddNumbers); // ---> [1, 3, 5, 7, 9];
-
-
 
 // Ejercicio 6
 function reducer() {
@@ -83,13 +81,9 @@ var sumEven =  even.reduce(function(a,b){
 sumArray.push(sumEven)
 return sumArray
 }
-
 console.log(reducer())
 
-
-
 // Ejercicio 7
-
 var persons = [
   {id : 1, name : "John", tags : "javascript"}, 
   {id : 2, name : "Alice", tags : "javascript"}, 
@@ -106,7 +100,6 @@ function jsFilter(){
     }
   })
   console.log(javascripts);
-
 }
 
 function jsOtherFilter(array){
@@ -119,10 +112,8 @@ function jsOtherFilter(array){
   })
   console.log(jsOtherArray)
   }
-
 jsFilter();
 jsOtherFilter(persons)
-
 
 // Ejercicio 8
 var paintPersons = function() {
@@ -139,20 +130,17 @@ function personId(element) {
   id.innerText = element['id'];
   container.appendChild(id);
 }
-
 function personName(element) {
   var name = document.createElement('p');
   name.innerText = element['name'];
   container.appendChild(name);
 }
-
 function personTag(element) {
   var tags = document.createElement('p');
   tags.innerText = element['tags'];
   container.appendChild(tags);
 }
 var outputPaintPerson = paintPersons(persons);
-  
 
 // Ejercicio 9
 var data = [
@@ -177,7 +165,6 @@ var data = [
     type: 'dog'
   },
 ];
-
 
 function getAge(){
   var counter = 0;
@@ -218,7 +205,6 @@ function petType(element) {
   type.innerText = element['type'];
   container.appendChild(type);
 }
-
 var outputPaintPets = paintPets(data);
 
 // Ejercicio 11
